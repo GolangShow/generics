@@ -3,6 +3,7 @@ package sort
 type numeric interface {
 	type int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64, float32, float64
 }
+
 // Sort sorts data
 func Sort(type T numeric) (data []T) {
 	n := len(data)
@@ -38,7 +39,6 @@ func quickSort(type T numeric) (data []T, a, b, maxDepth int) {
 		insertionSort(T)(data, a, b)
 	}
 }
-
 
 // Insertion sort
 func insertionSort(type T numeric)(data []T, a, b int) {
