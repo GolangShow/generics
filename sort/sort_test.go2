@@ -1,0 +1,39 @@
+package sort
+
+import "testing"
+
+func equal(type T comparable)(a, b []T) bool {
+	for idx := range a {
+		if a[idx] != b[idx] {
+			return false
+		}
+	}
+	return true
+}
+
+func TestSortInt(t *testing.T) {
+	given := []int{3,2,1}
+	want := []int{1,2,3}
+	Sort(int)(given)
+	if !equal(int)(given, want) {
+		t.Errorf("sort failed: got %v want %v", given, want)
+	}
+}
+
+func TestSortFloat(t *testing.T) {
+	given := []float64{3.3,2.2,1.1}
+	want := []float64{1.1,2.2,3.3}
+	Sort(float64)(given)
+	if !equal(float64)(given, want) {
+		t.Errorf("sort failed: got %v want %v", given, want)
+	}
+}
+
+func TestSortByte(t *testing.T) {
+	given := []byte{3,2,1}
+	want := []byte{1,2,3}
+	Sort(byte)(given)
+	if !equal(byte)(given, want) {
+		t.Errorf("sort failed: got %v want %v", given, want)
+	}
+}
