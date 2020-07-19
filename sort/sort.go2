@@ -184,8 +184,6 @@ func doPivot(type T numeric)(data []T, lo, hi int) (midlo, midhi int) {
 	return b - 1, c
 }
 
-// maxDepth returns a threshold at which quicksort should switch
-// to heapsort. It returns 2*ceil(lg(n+1)).
 func maxDepth(n int) int {
 	var depth int
 	for i := n; i > 0; i >>= 1 {

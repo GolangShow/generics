@@ -11,7 +11,6 @@ func equal(type T comparable)(a, b []T) bool {
 	return true
 }
 
-
 func TestSortInt(t *testing.T) {
 	given := []int{3,2,1}
 	want := []int{1,2,3}
